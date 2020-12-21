@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/beach_main.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  width: 300px;
+  height: 100%;
+  background-color: #3b6978;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20% 0 0 20%;
+  transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+}
+
+.change {
+  right: 0;
+  z-index: 1000;
+}
+.hamburger-menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+/* create cross in navigation, .change - fo js*/
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: #ec5858;
+  transition: all 0.8s;
+}
+
+.change .line1 {
+  transform: rotateZ(-45deg) translate(-8px, 6px);
+}
+.change .line3 {
+  transform: rotateZ(45deg) translate(-8px, -6px);
+}
+.change .line2 {
+  opacity: 0;
+}
+
+.nav-list {
+  text-align: right;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 22px;
+  color: #e7dfd5;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+
+/* lines transition in navigation*/
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ec5858;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.left-side {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+  display: flex;
+}
+
+.brand {
+  font-family: "Dancing Script", cursive;
+  text-decoration: none;
+  font-size: 50px;
+  color: #ec5858;
+  font-weight: 500;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top, #e6ccac, transparent);
+}
+.banner .content {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: 50px;
+  font-weight: 400;
+  color: #204051;
+  padding-bottom: 20px;
+}
+.content p {
+  font-size: 20px;
+  color: #3b6978;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.cta-add {
+  background: #ec5858;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #e7dfd5;
+  border: none;
+  margin: 25px 0;
+  border-radius: 15px;
+  outline: none;
+}
+
+.about {
+  position: relative;
+  background-color: #e6ccac;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .contentBx {
+  min-width: 50%;
+  width: 50%;
+  text-align: end;
+  padding-right: 50px;
+}
+
+.titleText {
+  font-weight: 600;
+  color: #ec5858;
+  font-size: 2rem;
+  margin: 3rem 0;
+}
+.text {
+  font-size: 20px;
+  color: #3b6978;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.imgBx {
+  position: relative;
+  min-width: 50%;
+  width: 50%;
+  min-height: 500px;
+  z-index: 1;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 3rem 0;
+}
